@@ -9,10 +9,10 @@ on:
   
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: YOGA
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
     - name: Deploy to Tomcat
       run: |
-        curl --upload-file ./satcon.war "http://admin:admin01>@localhost:80/manager/text/deploy?path=/satex&update=true"
+        curl --upload-file "C:\Data\workspace\satcon\satcon.war" "http://admin:admin01>@localhost:80/manager/text/deploy?path=/satex&update=true"
