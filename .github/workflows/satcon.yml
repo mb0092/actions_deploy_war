@@ -1,7 +1,12 @@
 name: satcon
-'on': push
-  paths:
-    - 'C:\data\workspace\satcon\satcon.war'
+on: 
+  push:
+    branches:
+      - main
+    paths:
+      - 'C:\data\workspace\satcon\satcon.war'
+  workflow_dispatch:
+  
 jobs:
   build:
     runs-on: ubuntu-latest
