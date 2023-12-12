@@ -1,5 +1,5 @@
 name: Satcon
-on:
+'on':
   push:
     paths:
       - 'C:\data\workspace\satcon\satcon.war'
