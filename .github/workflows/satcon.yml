@@ -1,0 +1,14 @@
+name: Satcon
+on:
+  push:
+    paths:
+      - 'C:\data\workspace\satcon\satcon.war'
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+    - name: Deploy to Tomcat
+      run: |
+        curl --upload-file ./satcon.war "http://admin:admin01>@localhost:80/manager/text/deploy?path=/satex&update=true"
