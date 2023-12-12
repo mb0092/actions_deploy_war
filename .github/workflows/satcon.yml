@@ -15,4 +15,4 @@ jobs:
       uses: actions/checkout@v2
     - name: Deploy to Tomcat
       run: |
-        curl --upload-file "C:\data\workspace\satcon\satcon.war" "http://admin:admin01>@localhost:80/manager/text/deploy?path=/satex&update=true"
+        curl --upload-file "C:\Data\workspace\satcon\satcon.war" "http://admin:admin01>@localhost:80/manager/text/deploy?path=/satex&update=true"
