@@ -1,8 +1,7 @@
 name: satcon
-'on':
-  push:
-    paths:
-      - 'C:\data\workspace\satcon\satcon.war'
+'on': push
+  paths:
+    - 'C:\data\workspace\satcon\satcon.war'
 jobs:
   build:
     runs-on: ubuntu-latest
