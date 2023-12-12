@@ -1,4 +1,4 @@
-name: Satcon
+name: satcon
 'on':
   push:
     paths:
