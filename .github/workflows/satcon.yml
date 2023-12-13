@@ -9,8 +9,8 @@ on:
 jobs:
   # This workflow contains just one single job: "build"
   build:
-    # It will run on local self-hosted runner yoga
-    runs-on: [self-hosted, yoga]
+    # It will run on local self-hosted runner yoga [self-hosted, yoga]
+    runs-on: self-hosted
     # Execute this set of instructions:
     steps:
       - name: Checkout code
