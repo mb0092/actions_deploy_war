@@ -1,3 +1,4 @@
+# Deployment of the Tomcat application using runner on the target server
 name: satcon
 on: 
   push:
@@ -5,7 +6,6 @@ on:
       - main
   workflow_dispatch:
     
-  
 jobs:
   # This workflow contains just one single job: "build"
   build:
@@ -16,5 +16,9 @@ jobs:
       - name: Checkout code
         # Download the repo to the current workspace
         uses: actions/checkout@v2
+        # Undeploy the old app first
+      - name: Undeploy from Tomcat
+        run: curl -v -u deploy:deploy01 "http://localhost:80/manager/text/undeploy?path=/satcon&update=true
+        # and later deploy new version
       - name: Deploy to Tomcat
-        run: curl --upload-file "C:\Data\workspace\satcon\satcon.war" "http://admin:admin01>@localhost:80/manager/text/deploy?path=/satex&update=true"
+        run: curl -v -u deploy:deploy01 -T C:\Data\workspace\satcon\satcon.war "http://localhost:80/manager/text/deploy?path=/satcon&update=true"
