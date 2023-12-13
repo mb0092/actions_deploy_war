@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
     
 jobs:
-  # This workflow contains just one single job: "build"
+  # This workflow contains just one single job: "build" 
   build:
     # It will run on local self-hosted runner yoga [self-hosted, yoga]
     runs-on: self-hosted
@@ -18,7 +18,7 @@ jobs:
         uses: actions/checkout@v2
         # Undeploy the old app first
       - name: Undeploy from Tomcat
-        run: curl -v -u deploy:deploy01 "http://localhost:80/manager/text/undeploy?path=/satcon&update=true
+        run: curl -v -u deploy:deploy01 "http://localhost:80/manager/text/undeploy?path=/satcon&update=true"
         # and later deploy new version
       - name: Deploy to Tomcat
         run: curl -v -u deploy:deploy01 -T C:\Data\workspace\satcon\satcon.war "http://localhost:80/manager/text/deploy?path=/satcon&update=true"
