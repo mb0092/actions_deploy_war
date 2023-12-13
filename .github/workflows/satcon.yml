@@ -18,7 +18,9 @@ jobs:
         uses: actions/checkout@v2
         # Undeploy the old app first
       - name: Undeploy from Tomcat
+        shell: bash
         run: curl -v -u deploy:deploy01 "http://localhost:80/manager/text/undeploy?path=/satcon&update=true"
         # and later deploy new version
       - name: Deploy to Tomcat
+        shell: bash
         run: curl -v -u deploy:deploy01 -T C:\Data\workspace\satcon\satcon.war "http://localhost:80/manager/text/deploy?path=/satcon&update=true"
