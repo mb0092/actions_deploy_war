@@ -4,13 +4,14 @@ on:
   push:
     branches:
       - main
+      - master
   workflow_dispatch:
     
 jobs:
   # This workflow contains some jobs: "build" 
   build_on_windows:
     # It will run on local self-hosted runner yoga [self-hosted, yoga]
-    runs-on: yoga
+    runs-on: self-hosted
     # Execute this set of instructions:
     steps:
       - name: Checkout code
@@ -26,7 +27,7 @@ jobs:
         run: curl -v -u deploy:deploy01 -T C:\Data\workspace\satcon\satcon.war "http://localhost:80/manager/text/deploy?path=/satcon&update=true"
   build_on_linux:
     # It will run on local self-hosted runner m900
-    runs-on: m900
+    runs-on: self-hosted
     # Execute this set of instructions:
     steps:
       - name: Checkout code
