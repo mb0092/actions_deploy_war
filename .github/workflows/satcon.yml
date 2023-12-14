@@ -11,7 +11,7 @@ jobs:
   # This workflow contains some jobs: "build" 
   build_on_windows:
     # It will run on local self-hosted runner yoga [self-hosted, yoga]
-    runs-on: self-hosted
+    runs-on: self-hosted, yoga
     # Execute this set of instructions:
     steps:
       - name: Checkout code
@@ -27,7 +27,7 @@ jobs:
         run: curl -v -u deploy:deploy01 -T C:\Data\workspace\satcon\satcon.war "http://localhost:80/manager/text/deploy?path=/satcon&update=true"
   build_on_linux:
     # It will run on local self-hosted runner m900
-    runs-on: self-hosted
+    runs-on: self-hosted, m900
     # Execute this set of instructions:
     steps:
       - name: Checkout code
@@ -40,4 +40,4 @@ jobs:
         # and later deploy new version
       - name: Deploy to Tomcat
         shell: sh
-        run: curl -v -u deploy:deploy01 -T /home/miro/Downloads/satcon.war "http://localhost:80/manager/text/deploy?path=/satcon&update=true"
+        run: curl -v -u deploy:deploy01 -T /home/miro/Downloads/satcon.war "http://localhost:8080/manager/text/deploy?path=/satcon&update=true"
