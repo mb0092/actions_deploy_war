@@ -1,1 +1,1 @@
-Working on my first action
+Deploying the satcon.war on Tomcat using Git Actions
